@@ -1,0 +1,9 @@
+{{#if this.isProcessingWallet}}
+  <div class="d-flex flex-column justify-content-center my-5">
+    <div class="spinner-border mx-auto" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <p class="mx-auto">Initializing wallet...</p>
+  </div>
+{{/if}}
+<div id="firebaseui-auth-container" class="px-2" {{did-insert this.didInsert}}></div>
