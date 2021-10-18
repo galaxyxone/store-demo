@@ -1,0 +1,42 @@
+<nav class="navbar navbar-light navbar-expand-md grid grid-gap-0 grid-cols-3 px-4">
+  <div class="flex-grow-1 mr-auto">
+    <LinkTo @class="navbar-brand" @route="index">
+      <svg class="logo-color" width="72" height="20" viewBox="0 0 72 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      </svg>
+    </LinkTo>
+  </div>
+
+  
+
+  {{#unless @isLoading}}
+    <button class="navbar-toggler ml-auto" type="button" {{on "click" this.toggleExpanded}} aria-controls="navbarContent" aria-expanded={{this.expanded}} aria-label="Toggle Nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end text-center grid-cols-3-fill grid-cols-3-md-single {{if this.expanded "show"}}" id="navbarContent">
+      <ul class="navbar-nav rounded mt-3 mt-md-0 bg-white bg-md-transparent">
+        {{#if this.isLoggedIn}}
+          <li class="nav-item border-bottom border-md-0 py-2">
+            {{#if this.brandedLogin}}
+              <LinkTo @route="items" class="nav-link active font-weight-bold">View My Wallet</LinkTo>
+            {{else}}
+              <a class="nav-link active font-weight-bold" href="https://wallet.bitski.com">
+                View My Wallet
+              </a>
+            {{/if}}
+          </li>
+          <li class="nav-item py-2">
+            <button type="button" class="nav-link btn btn-link border-0 mx-auto ml-md-3" {{on "click" this.logOut}}>
+              Log Out
+            </button>
+          </li>
+        {{else}}
+          <li class="nav-item py-2">
+            <button type="button" class="nav-link btn btn-link border-0 mr-right " {{on "click" this.logIn}}>
+              Log In
+            </button>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  {{/unless}}
+</nav>

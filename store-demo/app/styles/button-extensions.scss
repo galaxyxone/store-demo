@@ -1,0 +1,8 @@
+.btn-lg {
+  letter-spacing: $btn-letter-spacing-lg;
+}
+
+.btn-color {
+  color: map-get($store-theme, 'btn-color');
+  fill: map-get($store-theme, 'btn-color');
+}
