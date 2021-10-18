@@ -1,0 +1,129 @@
+$cadet: #a5afbe;
+$dark-text: #444a57;
+$porcelain: #eef0f2;
+$mint: #75ff93;
+$salem: #139530;
+
+// Globals
+$font-family-base: 'Inter', sans-serif;
+$enable-shadows: true;
+$enable-responsive-font-sizes: true;
+$hover-border: none;
+$active-border: none;
+$btn-active-box-shadow: unset;
+
+// Store meta-theme
+$store-theme: theme();
+
+// Body
+$body-color: $dark-text;
+$body-bg: map-get($store-theme, 'background');
+
+// Headings
+$headings-color: map-get($store-theme, 'headings-color');
+$headings-font-weight: 600;
+$headings-letter-spacing: -0.09375rem;
+$h1-font-size: 3rem;
+
+// Text
+$lead-font-size: 1.125rem;
+$lead-font-weight: 700;
+$font-weight-normal: 500;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
+$letter-spacing-xs: -0.125rem;
+$letter-spacing-sm: -0.0625rem;
+$letter-spacing-md: 0;
+$letter-spacing-lg: 0.0625rem;
+
+// Grid
+$grid-gutter-width: 5rem;
+$grid-gutter-width-sm: 1rem;
+
+// Toast
+$toast-max-width: 545px;
+$toast-color: $salem;
+$toast-border-width: 0;
+$toast-background-color: $mint;
+$toast-header-background-color: $mint;
+$toast-padding-y: 1.35rem;
+$toast-box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+
+// Transitions
+$transition-fade: opacity 0.25s ease-in-out;
+$transition-bounce-in: 0.25s ease-in-out;
+
+// Card
+$card-box-shadow: 0 0 10px 0 rgba(165, 175, 190, 0.08);
+$card-transition: transform 0.25s ease-in-out;
+
+// Buttons
+$btn-font-weight: 600;
+$btn-border-radius: 3rem;
+$btn-border-radius-sm: 2rem;
+$btn-border-radius-lg: 3rem;
+$btn-padding-y: 0.45rem;
+$btn-padding-x: 1.5rem;
+$btn-padding-x-lg: 1.86rem;
+$btn-padding-y-lg: 0.69rem;
+$btn-line-height-lg: 1.5rem;
+$btn-letter-spacing-lg: -0.03125rem;
+
+// Navbar
+$navbar-light-color: $cadet;
+$navbar-light-hover-color: darken($navbar-light-color, 15%);
+$navbar-light-toggler-icon-bg: url("/assets/svg/navbar-toggler.svg") !default;
+$navbar-light-toggler-border-color: transparent !default;
+
+// Nav
+$nav-link-font-size: 0.875rem;
+$nav-link-color: $cadet;
+$nav-link-color-active: map-get($store-theme, 'link-color-active');
+$nav-link-hover-color: darken($nav-link-color, 15%);
+$nav-link-hover-color-active: darken($nav-link-color-active, 15%);
+
+// Borders
+$border-radius: 0.625rem;
+$border-radius-lg: 1.25rem;
+
+// Badges
+$badge-font-size: 1rem;
+$badge-pill-padding-x: 0.85rem;
+$badge-padding-y: 0.75rem;
+
+// Modals
+$modal-md: 350px;
+$modal-lg: 450px;
+
+// Theme
+$theme-colors: (
+  'primary': map-get($store-theme, 'primary'),
+  'secondary': map-get($store-theme, 'secondary'),
+  'green': $salem,
+  'light': $porcelain,
+);
+
+.btn:focus,
+.btn:active,
+button:focus,
+button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+// Set contents to full screen
+body,
+html {
+  height: 100%;
+
+  @if map-get($store-theme, 'background-img') != null {
+    background: url(map-get($store-theme, 'background-img')) no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+
+body {
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

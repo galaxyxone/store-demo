@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Store Demo</title>
+    <meta name="description" content="Demo: Purchase NFTs via credit card">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.bitskistatic.com/images/favicons/apple-icon-57x57-64e3c22a18ebe4b47427371088ae7d05.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.bitskistatic.com/images/favicons/apple-icon-60x60-f95f3ba8922bfd6830a3c58d13b009b9.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.bitskistatic.com/images/favicons/apple-icon-72x72-f94f7995714a1d580d2e38120ccc6ea3.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.bitskistatic.com/images/favicons/apple-icon-76x76-7635c2ff46a560aa4e7bd0598df7b6c6.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.bitskistatic.com/images/favicons/apple-icon-114x114-da81a72cd1c741d1d44ff9dc459950e0.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.bitskistatic.com/images/favicons/apple-icon-120x120-8a85a3849fdb676a1706c54529c11851.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.bitskistatic.com/images/favicons/apple-icon-144x144-dedcab4f2d04ac60a01c9f20c4bb2b6e.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.bitskistatic.com/images/favicons/apple-icon-152x152-660ffa542cdffc03e6e93d617acd01e0.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.bitskistatic.com/images/favicons/apple-icon-180x180-0b11f1aaed5c987dfe883fdd62424a20.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="https://cdn.bitskistatic.com/images/favicons/android-icon-192x192-d1c01a4ea3dd75836e7f288cef0422d0.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.bitskistatic.com/images/favicons/favicon-32x32-360a24858eb1714945579cc6d8da6c91.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.bitskistatic.com/images/favicons/favicon-96x96-a52662f43ff5add653c55c3a51b8d2f6.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.bitskistatic.com/images/favicons/favicon-16x16-e978dc584176d4384eaef9ad7c630760.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://cdn.bitskistatic.com/images/favicons/ms-icon-144x144-a6f34a30ff9490656fa1e08b853cde4c.png">
+    <meta name="theme-color" content="#ffffff">
+
+    {{content-for "head"}}
+
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/store-demo.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <style type="text/css">
+      .firebaseui-card-header { display: none; }
+      .mdl-shadow--2dp { box-shadow: none; }
+      .firebaseui-container { max-width: 100%; }
+      .firebaseui-card-actions { padding-bottom: 10px; }
+      .firebaseui-form-actions button { border-radius: 3rem; }
+      .mdl-button--raised.mdl-button--colored { background-color: #2926cf; }
+    </style>
+
+    {{content-for "head-footer"}}
+  </head>
+  <body>
+    {{content-for "body"}}
+
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/store-demo.js"></script>
+    <script defer src="https://js.stripe.com/v3/"></script>
+    <script defer src="https://checkout.stripe.com/checkout.js"></script>
+    <script defer>
+      window.intercomSettings={app_id:'ypzoqtmj',custom_launcher_selector:'#intercom', hide_default_launcher: true};
+      (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/ypzoqtmj';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+    </script>
+
+    {{content-for "body-footer"}}
+  </body>
+</html>

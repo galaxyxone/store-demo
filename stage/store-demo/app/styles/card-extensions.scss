@@ -1,0 +1,16 @@
+.card {
+  @include transition($card-transition);
+  @include box-shadow($card-box-shadow);
+
+  .card-cta {
+    @include transition($card-transition);
+  }
+
+  &:hover {
+    transform: scale(0.99);
+
+    .card-cta {
+      transform: scale(1.02);
+    }
+  }
+}
